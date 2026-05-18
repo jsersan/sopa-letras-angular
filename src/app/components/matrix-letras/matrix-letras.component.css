@@ -1,0 +1,9 @@
+.matrix-container{display:flex;justify-content:flex-start;padding:0;width:auto;flex-shrink:0}
+.matrix{display:grid;gap:0;background:white;padding:1rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);user-select:none}
+.fila-completa{display:contents}
+.celda{width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;border:1px solid var(--color-border);cursor:pointer;transition:all 0.2s;background:white}
+.celda:hover{background:var(--color-primary-light);transform:scale(1.1);z-index:10}
+.celda.let-sel{background:var(--color-primary-light);color:var(--color-primary);border-color:var(--color-primary)}
+.celda.let-mar{background:var(--color-success);color:white;border-color:var(--color-success)}
+@media (max-width:968px){.matrix-container{justify-content:center;padding:0 1rem}.celda{width:2rem;height:2rem;font-size:0.9rem}}
+@media (max-width:480px){.celda{width:1.5rem;height:1.5rem;font-size:0.75rem}}

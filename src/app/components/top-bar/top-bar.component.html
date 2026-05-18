@@ -1,0 +1,50 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <div class="usuario-info">
+      <span class="usuario-icon">👤</span>
+      <span class="usuario-nombre">{{ nombreUsuario }}</span>
+    </div>
+  </div>
+  
+  <div class="top-bar-content">
+    <div class="control-group">
+      <select [(ngModel)]="tamanioSeleccionado" class="btn btn-tamanio">
+        <option *ngFor="let t of tamaniosDisponibles" [value]="t">
+          TAMANIO {{t}} x {{t}}
+        </option>
+      </select>
+    </div>
+    
+    <div class="control-group">
+      <button class="btn btn-nuevo" (click)="onNuevoJuego()">
+        <span class="icon">🎮</span>
+        <span class="text">JUEGO NUEVO</span>
+      </button>
+    </div>
+    
+    <div class="control-group">
+      <button 
+        class="btn btn-pausar" 
+        [ngClass]="{'pausado': pausado}"
+        (click)="pausar.emit()"
+      >
+        <span class="icon">{{ pausado ? '▶️' : '⏸' }}</span>
+        <span class="text">{{ pausado ? 'REANUDAR' : 'PAUSAR' }}</span>
+      </button>
+    </div>
+    
+    <div class="control-group">
+      <button class="btn btn-records" (click)="mostrarRecords.emit()">
+        <span class="icon">🏆</span>
+        <span class="text">RÉCORDS</span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="top-bar-right">
+    <button class="btn btn-salir" (click)="salir.emit()">
+      <span class="icon">🚪</span>
+      <span class="text">Salir</span>
+    </button>
+  </div>
+</div>

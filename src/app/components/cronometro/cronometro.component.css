@@ -1,0 +1,12 @@
+.cronometro-floating{position:fixed;bottom:2rem;right:2rem;z-index:100;animation:fadeIn 0.5s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.cronometro-content{background:linear-gradient(135deg,var(--color-primary),var(--color-accent));color:white;padding:1.5rem 2rem;border-radius:16px;box-shadow:0 8px 24px rgba(63,81,181,0.4);display:flex;align-items:center;gap:1rem;font-family:monospace;font-size:1.5rem;font-weight:700;border:3px solid rgba(255,255,255,0.3);transition:all 0.3s}
+.cronometro-content:hover{transform:scale(1.05);box-shadow:0 12px 32px rgba(63,81,181,0.5)}
+.cronometro-content.pausado{background:linear-gradient(135deg,#FF9800,#F57C00);animation:pulseGlow 1.5s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{box-shadow:0 8px 24px rgba(255,152,0,0.4)}50%{box-shadow:0 12px 32px rgba(255,152,0,0.7)}}
+.icon{font-size:2rem;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.tiempo{letter-spacing:2px;text-shadow:0 2px 4px rgba(0,0,0,0.3)}
+.pausa-texto{font-size:0.8rem;font-weight:700;letter-spacing:1px;opacity:0.9;animation:blink 1s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:0.9}50%{opacity:0.5}}
+@media (max-width:768px){.cronometro-floating{bottom:1rem;right:1rem}.cronometro-content{padding:1rem 1.5rem;font-size:1.2rem}.icon{font-size:1.5rem}}

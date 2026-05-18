@@ -1,0 +1,33 @@
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:1000;animation:fadeIn 0.3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-content{background:white;border-radius:16px;padding:2rem;max-width:700px;width:90%;max-height:90vh;overflow-y:auto;position:relative;animation:slideIn 0.3s}
+@keyframes slideIn{from{transform:translateY(-50px);opacity:0}to{transform:translateY(0);opacity:1}}
+.btn-cerrar{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--color-text-secondary);transition:color 0.3s}
+.btn-cerrar:hover{color:var(--color-primary)}
+.modal-content h2{text-align:center;color:var(--color-primary);margin-bottom:1.5rem;font-size:2rem}
+.tamanios-tabs{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-bottom:1.5rem}
+.tab{padding:0.5rem 1rem;border:2px solid var(--color-border);background:white;border-radius:8px;cursor:pointer;font-weight:600;transition:all 0.3s;font-size:0.9rem}
+.tab:hover{border-color:var(--color-primary);background:var(--color-primary-light)}
+.tab.active{background:var(--color-primary);color:white;border-color:var(--color-primary)}
+.records-titulo{text-align:center;font-size:1.3rem;font-weight:700;color:var(--color-primary);margin-bottom:1.5rem;padding:1rem;background:var(--color-primary-light);border-radius:8px}
+.icono-trofeo{font-size:1.5rem;margin-right:0.5rem}
+.cargando,.sin-records{text-align:center;padding:2rem;color:var(--color-text-secondary);font-size:1.1rem}
+.tabla-records{width:100%;border-collapse:collapse;margin-bottom:1.5rem}
+.tabla-records thead{background:var(--color-primary);color:white}
+.tabla-records th{padding:1rem;text-align:left;font-weight:700;font-size:0.95rem}
+.tabla-records th:first-child{border-radius:8px 0 0 0;text-align:center}
+.tabla-records th:last-child{border-radius:0 8px 0 0}
+.tabla-records tbody tr{border-bottom:1px solid var(--color-border);transition:background 0.3s}
+.tabla-records tbody tr:hover{background:var(--color-background)}
+.tabla-records tbody tr.destacado{background:linear-gradient(90deg,#fff9c4,#fff);font-weight:700}
+.tabla-records td{padding:0.75rem 1rem}
+.posicion{text-align:center;font-weight:700;font-size:1.1rem}
+.medalla{font-size:1.5rem}
+.nombre{font-weight:600;color:var(--color-text)}
+.tiempo{font-family:monospace;font-size:1.1rem;color:var(--color-primary);font-weight:700}
+.fecha{color:var(--color-text-secondary);font-size:0.9rem}
+.botones-accion{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem}
+.btn{padding:0.75rem 2rem;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:1rem;transition:all 0.3s;display:flex;align-items:center;gap:0.5rem}
+.btn-atzera{background:var(--color-primary);color:white}
+.btn-atzera:hover{background:var(--color-primary-dark);transform:translateY(-2px)}
+@media (max-width:768px){.modal-content{padding:1.5rem;width:95%}.tamanios-tabs{gap:0.3rem}.tab{padding:0.4rem 0.8rem;font-size:0.8rem}.tabla-records th,.tabla-records td{padding:0.5rem;font-size:0.85rem}.tiempo{font-size:0.95rem}}

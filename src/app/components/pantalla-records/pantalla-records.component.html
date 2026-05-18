@@ -1,0 +1,62 @@
+<div *ngIf="mostrar" class="modal-overlay" (click)="onCerrar()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="btn-cerrar" (click)="onCerrar()">✕</button>
+    
+    <h2>🏆 Mejores Marcas</h2>
+    
+    <div class="tamanios-tabs">
+      <button
+        *ngFor="let t of tamaniosDisponibles"
+        class="tab"
+        [ngClass]="{'active': tamanioSeleccionado === t}"
+        (click)="cambiarTamanio(t)"
+      >
+        {{t}}x{{t}}
+      </button>
+    </div>
+    
+    <div class="records-titulo">
+      <span class="icono-trofeo">🏆</span>
+      Top 10 - {{tamanioSeleccionado}}x{{tamanioSeleccionado}}
+    </div>
+    
+    <div *ngIf="cargando" class="cargando">Cargando...</div>
+    
+    <div *ngIf="!cargando && records.length === 0" class="sin-records">
+      No hay récords todavía para este tamaño
+    </div>
+    
+    <table *ngIf="!cargando && records.length > 0" class="tabla-records">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Izena</th>
+          <th>Denbora</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let record of records; let i = index"
+          [ngClass]="{'destacado': i === 0}"
+        >
+          <td class="posicion">
+            <span *ngIf="i === 0" class="medalla">🥇</span>
+            <span *ngIf="i === 1" class="medalla">🥈</span>
+            <span *ngIf="i === 2" class="medalla">🥉</span>
+            <span *ngIf="i > 2">{{i + 1}}</span>
+          </td>
+          <td class="nombre">{{record?.userName || 'Usuario'}}</td>
+          <td class="tiempo">{{formatearTiempo(record?.segundos || 0)}}</td>
+          <td class="fecha">{{formatearFecha(record?.fecha)}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="botones-accion">
+      <button class="btn btn-atzera" (click)="onCerrar()">
+        ⬅️ ATZERA
+      </button>
+    </div>
+  </div>
+</div>

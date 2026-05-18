@@ -1,0 +1,7 @@
+<div class="cronometro-floating" [ngClass]="{'pausado': pausado}">
+  <div class="cronometro-content">
+    <span class="icon">{{ pausado ? '⏸️' : '⏱️' }}</span>
+    <span class="tiempo">{{ tiempoFormateado }}</span>
+    <span *ngIf="pausado" class="pausa-texto">PAUSADO</span>
+  </div>
+</div>

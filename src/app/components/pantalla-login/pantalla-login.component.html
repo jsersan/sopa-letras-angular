@@ -1,0 +1,88 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>🔤 Sopa de Letras</h1>
+      <p>{{ modo === 'login' ? 'Inicia sesión para jugar' : 'Crea tu cuenta' }}</p>
+    </div>
+
+    <div class="login-form">
+      <div *ngIf="modo === 'registro'" class="form-group">
+        <label>Nombre</label>
+        <input 
+          type="text" 
+          [(ngModel)]="displayName" 
+          placeholder="Tu nombre"
+          [disabled]="cargando"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input 
+          type="email" 
+          [(ngModel)]="email" 
+          placeholder="tu@email.com"
+          [disabled]="cargando"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input 
+          type="password" 
+          [(ngModel)]="password" 
+          placeholder="Mínimo 6 caracteres"
+          [disabled]="cargando"
+        >
+      </div>
+
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+
+      <button 
+        *ngIf="modo === 'login'"
+        class="btn btn-primary" 
+        (click)="iniciarSesion()"
+        [disabled]="cargando"
+      >
+        <span *ngIf="!cargando">Iniciar Sesión</span>
+        <span *ngIf="cargando" class="loader"></span>
+      </button>
+
+      <button 
+        *ngIf="modo === 'registro'"
+        class="btn btn-primary" 
+        (click)="registrarse()"
+        [disabled]="cargando"
+      >
+        <span *ngIf="!cargando">Crear Cuenta</span>
+        <span *ngIf="cargando" class="loader"></span>
+      </button>
+
+      <div class="divider">
+        <span>o</span>
+      </div>
+
+      <button 
+        class="btn btn-google" 
+        (click)="iniciarSesionGoogle()"
+        [disabled]="cargando"
+      >
+        <span class="google-icon">G</span>
+        Continuar con Google
+      </button>
+
+      <div class="toggle-mode">
+        <span *ngIf="modo === 'login'">
+          ¿No tienes cuenta? 
+          <a (click)="cambiarModo()">Regístrate</a>
+        </span>
+        <span *ngIf="modo === 'registro'">
+          ¿Ya tienes cuenta? 
+          <a (click)="cambiarModo()">Inicia sesión</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

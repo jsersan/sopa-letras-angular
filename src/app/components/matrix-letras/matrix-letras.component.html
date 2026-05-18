@@ -1,0 +1,22 @@
+<div class="matrix-container">
+  <div class="matrix" [style.grid-template-columns]="'repeat(' + tamanio + ', 1fr)'">
+    <div 
+      *ngFor="let fila of sopa; let f = index"
+      class="fila-completa"
+    >
+      <div 
+        *ngFor="let celda of fila; let c = index"
+        class="celda"
+        [ngClass]="{
+          'let-sel': celda?.activa && !celda?.acertada,
+          'let-mar': celda?.acertada
+        }"
+        (mousedown)="onMouseDown(f, c)"
+        (mouseenter)="onMouseEnter(f, c)"
+        (mouseup)="onMouseUp(f, c)"
+      >
+        {{ celda?.letra }}
+      </div>
+    </div>
+  </div>
+</div>

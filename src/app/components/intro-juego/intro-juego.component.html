@@ -1,0 +1,18 @@
+<div class="intro-container">
+  <div class="intro-card">
+    <h1>🔤 Sopa de Letras</h1>
+    <p class="bienvenida">¡Bienvenido, {{ nombreUsuario }}!</p>
+    
+    <div class="tamanio-selector">
+      <label>Tamaño del tablero:</label>
+      <select [(ngModel)]="tamanioSeleccionado" (change)="onCambiarTamanio($event)" class="select-tamanio">
+        <option *ngFor="let t of tamaniosDisponibles" [value]="t">{{ t }} x {{ t }}</option>
+      </select>
+    </div>
+    
+    <button class="btn-jugar" (click)="onIniciar()">
+      <span class="icon">🎮</span>
+      <span>¡JUGAR!</span>
+    </button>
+  </div>
+</div>

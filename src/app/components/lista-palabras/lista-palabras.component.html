@@ -1,0 +1,12 @@
+<div class="lista-palabras">
+  <h3>🔍 Palabras a Buscar</h3>
+  <div class="palabras-grid">
+    <div 
+      *ngFor="let palabra of palabras; let idx = index"
+      class="palabra-item"
+      [ngClass]="{'encontrada': palabra.encontrada}"
+    >
+      {{ getPalabraTexto(palabra) }}
+    </div>
+  </div>
+</div>

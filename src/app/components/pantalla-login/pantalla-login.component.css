@@ -1,0 +1,27 @@
+.login-container{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,var(--color-primary),var(--color-accent));padding:1rem}
+.login-card{background:white;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.3);max-width:450px;width:100%;overflow:hidden}
+.login-header{background:linear-gradient(135deg,var(--color-primary),var(--color-accent));color:white;padding:2rem;text-align:center}
+.login-header h1{margin:0 0 0.5rem 0;font-size:2rem}
+.login-header p{margin:0;opacity:0.9}
+.login-form{padding:2rem}
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:0.5rem;font-weight:600;color:var(--color-text)}
+.form-group input{width:100%;padding:0.75rem;border:2px solid var(--color-border);border-radius:8px;font-size:1rem;transition:border-color 0.3s}
+.form-group input:focus{outline:none;border-color:var(--color-primary)}
+.form-group input:disabled{background:var(--color-background);cursor:not-allowed}
+.error-message{background:#ffebee;color:#c62828;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.9rem}
+.btn-primary{background:var(--color-primary);color:white;width:100%;margin-bottom:1rem}
+.btn-primary:hover:not(:disabled){background:var(--color-primary-dark)}
+.btn-google{background:white;color:var(--color-text);border:2px solid var(--color-border);width:100%}
+.btn-google:hover:not(:disabled){background:var(--color-background)}
+.google-icon{background:linear-gradient(135deg,#4285f4,#34a853,#fbbc05,#ea4335);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:1.2rem}
+.divider{position:relative;text-align:center;margin:1.5rem 0}
+.divider::before,.divider::after{content:'';position:absolute;top:50%;width:45%;height:1px;background:var(--color-border)}
+.divider::before{left:0}
+.divider::after{right:0}
+.divider span{background:white;padding:0 1rem;color:var(--color-text-secondary)}
+.toggle-mode{text-align:center;margin-top:1.5rem;color:var(--color-text-secondary)}
+.toggle-mode a{color:var(--color-primary);font-weight:600;cursor:pointer;text-decoration:none}
+.toggle-mode a:hover{text-decoration:underline}
+.loader{width:20px;height:20px;border:3px solid rgba(255,255,255,0.3);border-top:3px solid white;border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}

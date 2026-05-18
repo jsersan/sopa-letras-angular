@@ -1,0 +1,48 @@
+<div class="sopa-container">
+  <app-intro-juego
+    *ngIf="!juegoIniciado"
+    [tamanio]="tamanio"
+    [nombreUsuario]="usuario.displayName || 'Usuario'"
+    (iniciar)="iniciarJuego()"
+    (cambiarTamanio)="cambiarTamanio($event)"
+  ></app-intro-juego>
+
+  <div *ngIf="juegoIniciado" class="juego">
+    <app-top-bar
+      [tamanio]="tamanio"
+      [pausado]="pausado"
+      [nombreUsuario]="usuario.displayName || 'Usuario'"
+      (nuevoJuego)="nuevoJuego($event)"
+      (pausar)="pausarJuego()"
+      (mostrarRecords)="toggleRecords()"
+      (salir)="cerrarSesion()"
+    ></app-top-bar>
+
+    <div class="juego-contenido">
+      <app-matrix-letras
+        *ngIf="sopa && sopa.length > 0"
+        [sopa]="sopa"
+        [tamanio]="tamanio"
+        (seleccionarInicio)="onSeleccionarInicio($event)"
+        (seleccionando)="onSeleccionando($event)"
+        (seleccionarFin)="onSeleccionarFin($event)"
+      ></app-matrix-letras>
+
+      <app-lista-palabras
+        [palabras]="palabras"
+      ></app-lista-palabras>
+    </div>
+
+    <app-cronometro
+      [tiempoInicio]="tiempoInicio"
+      [tiempoAcumulado]="tiempoAcumulado"
+      [pausado]="pausado"
+    ></app-cronometro>
+
+    <app-pantalla-records
+      [mostrar]="mostrarRecords"
+      [usuarioId]="usuario.uid"
+      (cerrar)="cerrarRecords()"
+    ></app-pantalla-records>
+  </div>
+</div>
