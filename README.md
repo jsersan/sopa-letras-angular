@@ -234,4 +234,3 @@ rankings/{tamaño}
 
 **PROYECTO BASE** - Los servicios y autenticación están listos.
 Implementa los componentes del juego usando la versión Vue 3 como referencia.
-# sopa-letras-angular
